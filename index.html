@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Город Седона</title>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
@@ -24,6 +25,9 @@
             <li class="navigation-item">
               <a class="navigation-link" href="catalog.html">Гостиницы</a>
             </li>
+          </ul>
+           <ul class="burger">
+            <span></span>
           </ul>
           <ul class="navigation-user">
             <li class="navigation-user-item">
@@ -197,7 +201,7 @@
                 <label class="field-text" for="search-date-arrival">Дата заезда:</label>
                 <div class="container-field-modal">
                   <input class="field-modal-form" id="search-date-arrival" name="search-date-arrival" type="text" value="27 апреля 2020" placeholder="Укажите дату" aria-describedby="error-date" required>
-                  <span class="comments-date error-date" id="error-date">Мы не можем отправить вас в прошлое.</span>
+                  <span class="comments-date error-date visually-hidden" id="error-date">На эту дату нет свободных номеров.</span>
                 </div>
               </fieldset>
               <fieldset class="field-group field-group-date">
@@ -205,7 +209,7 @@
                 <label class="field-text" for="search-date-departure">Дата выезда:</label>
                 <div class="container-field-modal">
                   <input class="field-modal-form" id="search-date-departure" name="search-date-departure" type="text" value="1 сентября 2023" placeholder="Укажите дату" aria-describedby="comments-date" required>
-                  <span class="comments-date" id="comments-date">На эти даты есть свободные номера. Пока есть.</span>
+                  <span class="comments-date visually-hidden" id="comments-date">На эти даты есть свободные номера. Пока есть.</span>
                 </div>
               </fieldset>
               <div class="container-visitor">
@@ -213,7 +217,7 @@
                   <legend class="visually-hidden">Количество взрослых.</legend>
                   <label class="field-text field-text-visitor" for="quantity-visitor">Взрослые:</label>
                   <div class="container-quantity">
-                    <input class="quantity-visitor" id="quantity-visitor" name="quantity-visitor" type="number" value="2" min="1" placeholder="1" required>
+                    <input class="quantity-visitor" id="quantity-visitor" name="quantity-visitor" type="number" value="2" min="1" max="100" placeholder="1" required>
                     <button class="decrease" type="button" aria-label="Уменьшить количество"></button>
                     <button class="increase" type="button" aria-label="Увеличить количество"></button>
                   </div>
@@ -227,7 +231,7 @@
                     </button>
                    </div>
                   <div class="container-quantity">
-                    <input class="quantity-visitor" id="quantity-children" name="quantity-children" type="number" value="2" min="0" placeholder="0">
+                    <input class="quantity-visitor" id="quantity-children" name="quantity-children" type="number" value="2" min="0" max="99" placeholder="0">
                     <button class="decrease" type="button" aria-label="Уменьшить количество"></button>
                     <button class="increase" type="button" aria-label="Увеличить количество"></button>
                   </div>
@@ -241,5 +245,7 @@
         </div>
       </div>
     </div>
+    <script src="script/script-modal.js"></script>
+    <script src="script/script-catalog.js"></script>
   </body>
 </html>

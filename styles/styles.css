@@ -181,7 +181,7 @@ img {
 }
 
 .navigation-user-link-favourites::after {
-  content: "12";
+  content: "";
   position: absolute;
   top: 11px;
   right: 4px;
@@ -1499,7 +1499,7 @@ img {
   color: #ffffff;
 }
 
-/* добывляет чекбокс/радио через псевдоэлементы */
+/* добавляет чекбокс/радио через псевдоэлементы */
 
 .control-label::before {
   content: "";
@@ -1708,7 +1708,7 @@ input[type="radio"]:disabled + .control-label {
 }
 
 .toggle-max {
-  right: 0;
+  left: 206px;
 }
 
 .range-toggle:hover {
@@ -2112,6 +2112,8 @@ input[type="radio"]:disabled + .control-label {
   outline: none;
 }
 
+/* стили для кнопки в избранном (.favorites-button) */
+
 .favorites-button {
   box-sizing: border-box;
   max-width: 140px;
@@ -2283,4 +2285,358 @@ input[type="radio"]:disabled + .control-label {
   text-align: center;
   color: #333333;
   overflow-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+.burger {
+  display: none;
+  width: 30px;
+  height: 18px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.burger span {
+  height: 2px;
+  width: 30px;
+  background-color: #000000;
+}
+
+.burger::before, .burger::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  background-color: #000000;
+  transition: all 0.3s ease 0s;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger.active span {
+  transform: scale(0);
+}
+
+.burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+/* адаптив под 768px */
+
+@media (max-width: 768px) {
+
+  /* главная */
+
+  .header-button {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .advantages-img, .advantages-img2 {
+    display: none;
+  }
+
+  .advantages {
+    gap: 0;
+  }
+
+  .advantages-list {
+    flex-direction: column;
+  }
+
+  .servise-list {
+    flex-direction: column;
+  }
+
+  .servise-item {
+    width: 100%;
+    gap: 15px;
+    padding: 30px 85px;
+    min-height: 180px;
+    font-size: 21px;
+  }
+
+  .servise-item-house::before, .servise-item-souvenir::before, .servise-item-meal::before {
+    display: none;
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .e-mail, .subscribe-button {
+    border-radius: 4px;
+  }
+
+  .servise-item h4 {
+    margin: 0;
+  }
+
+  .advantages-text-container {
+    padding: 30px 0;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .advantages-text-body {
+    max-width: 630px;
+  }
+
+  .advantages-text-additional-container {
+    min-height: 180px;
+    padding: 30px 60px;
+  }
+
+  .servise-text-heading, .servise-text-body {
+    max-width: 630px;
+  }
+
+  .servise-text-container {
+    padding: 30px 0;
+  }
+
+  .advantages-text-additional-container h4, .advantages-text-additional-container p {
+    max-width: 300px;
+  }
+
+  .advantages-text-additional-container h4 {
+    padding-bottom: 17px;
+  }
+
+  .advantages-text-additional-container p {
+    padding-top: 15px;
+    font-size: 21px;
+  }
+
+  .search {
+    padding: 30px 0;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .subscribe {
+    gap: 30px;
+    padding: 30px 0;
+  }
+
+  .page-footer {
+    padding: 20px 30px 20px;
+  }
+
+  /* бургер меню */
+
+  .burger {
+    display: flex;
+    padding: 0;
+    margin-left: auto;
+    z-index: 3;
+  }
+
+  .navigation {
+    padding: 0 30px;
+    justify-content: space-between;
+    column-gap: 10px;
+  }
+
+  .navigation-list {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    gap: 20px;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e7e8eb;
+    z-index: 2;
+    animation: burgerAnimation 0.4s;
+  }
+
+  @keyframes burgerAnimation {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+
+  .navigation-list.open {
+    display: flex;
+  }
+
+  .navigation-item {
+    width: 30vw;
+  }
+
+  .navigation-user {
+    margin-left: 0;
+  }
+
+  .navigation-link {
+    font-size: 28px;
+    line-height: 30px;
+    color: #000000;
+    text-align: left;
+  }
+
+  /* модалка */
+
+  .modal-container {
+    z-index: 5;
+  }
+
+  .modal-search {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    position: fixed;
+  }
+
+  /* каталог */
+
+  .inner-header-title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .breadcrumbs-link-main {
+    width: 23px;
+    height: 25px;
+    margin-top: 5px;
+  }
+
+  .breadcrumbs-link-current {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .filter-infrastructure {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .filter-infrastructure-title, .filter-catalog-title, .filter-cost-title {
+    font-size: 25px;
+    line-height: 30px;
+    max-width: 200px;
+  }
+
+  .filter-infrastructure-container {
+    max-width: 100vw;
+    gap: 100px;
+  }
+
+  .filter-cost-container {
+    max-width: 100vw;
+    gap: 130px;
+  }
+
+  .control-label {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .filter-infrastructure-list {
+    max-width: 200px;
+    gap: 20px;
+  }
+
+  .price, .placeholder, .button-submit, .button-reset {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .sorting-title-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    gap: 40px;
+  }
+
+  .button-view-list {
+    display: none;
+  }
+
+  .select-control {
+    font-size: 25px;
+    line-height: 30px;
+    width: 305px;
+
+  }
+
+  .hotels-list {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .hotels-card {
+    max-width: 60vw;
+  }
+
+  .hotels-card-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hotels-card-title {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .hotels-card-type, .hotels-card-price, .hotels-card-rating {
+    font-size: 22px;
+    line-height: 27px;
+    max-width: 160px;
+  }
+
+  .hotels-card-button, .add-favorites-button, .favorites-button {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 160px;
+  }
+
+  .pagination-list {
+    gap: 30px;
+  }
+
+  .pagination-link {
+    font-size: 28px;
+  }
+
+  .subscribe-inner {
+    padding: 30px 0 70px;
+  }
+
+  .subscribe-form {
+    gap: 10px
+  }
 }

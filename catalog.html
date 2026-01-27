@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гостиницы Седоны</title>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
@@ -25,6 +26,9 @@
               <a class="navigation-link navigation-link-current">Гостиницы</a>
             </li>
           </ul>
+           <ul class="burger">
+            <span></span>
+          </ul>
           <ul class="navigation-user">
             <li class="navigation-user-item">
               <a class="navigation-user-link navigation-user-link-search" href="#">
@@ -33,7 +37,7 @@
             </li>
             <li class="navigation-user-item">
               <a class="navigation-user-link navigation-user-link-favourites" href="#">
-                <span class="visually-hidden">Понравившиеся отели 12.</span>
+                 <span class="visually-hidden">Понравившиеся отели.</span>
               </a>
             </li>
             <li>
@@ -114,24 +118,23 @@
                   <div class="container-cost">
                     <p class="filter-cost-min">
                       <label class="visually-hidden" for="min-price">Минимальная цена.</label>
-                      <input class="price min-price" type="number" value="0" id="min-price" name="min-price" min="0" placeholder="0">
+                      <input class="price min-price" type="number" id="min-price" name="min-price" min="0" placeholder="0">
                       <span class="placeholder">от</span>
                     </p>
                     <p class="filter-cost-max">
                       <label class="visually-hidden" for="max-price">Максимальная цена.</label>
-                      <input class="price max-price" type="number" value="9000" id="max-price" name="max-price" min="0" placeholder="0">
+                      <input class="price max-price" type="number" id="max-price" name="max-price" min="0" placeholder="0">
                       <span class="placeholder">до</span>
                     </p>
                   </div>
                   <div class="range-scale">
-                    <div class="range-bar" style="left: 0; width: 226px">
+                    <div class="range-bar" style="left: 0; width: 226px"></div>
                       <button class="range-toggle" type="button">
                         <span class="visually-hidden">Изменить минимальную цену</span>
                       </button>
                       <button class="range-toggle toggle-max" type="button">
                         <span class="visually-hidden">Изменить максимальную цену</span>
                       </button>
-                    </div>
                   </div>
                 </fieldset>
                 <div class="filter-button-container">
@@ -145,7 +148,7 @@
         <section class="sorting-hotels" data-test="catalog">
           <h2 class="visually-hidden">Найденные гостиницы.</h2>
           <div class="sorting-title-container">
-            <h3 class="sorting-hotels-title">Найдено гостиниц: <span class="sorting-hotels-quantity">38</span></h3>
+             <h3 class="sorting-hotels-title">Найдено гостиниц: <span class="sorting-hotels-quantity"></span></h3>
             <div class="sorting-show-container">
               <select class="select-control" aria-label="Сортировка">
                 <option value="cheap">Сначала дешевые</option>
@@ -203,7 +206,7 @@
               </div>
               <div class="hotels-button">
                 <a class="hotels-card-button" href="#">подробнее</a>
-                <button class="favorites-button" type="button">в избранном</button>
+                <button class="add-favorites-button" type="button">в избранное</button>
               </div>
               <div class="rating">
                 <p class="hotels-card-stars hotels-stars-4">
@@ -342,4 +345,6 @@
         </div>
       </footer>
     </div>
+    <script src="script/script-catalog.js"></script>
   </body>
+</html>
