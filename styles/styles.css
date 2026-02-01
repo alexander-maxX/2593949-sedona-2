@@ -2333,15 +2333,6 @@ input[type="radio"]:disabled + .control-label {
   transform: rotate(45deg) translate(0, 50%);
 }
 
-
-
-
-
-
-
-
-
-
 /* адаптив под 360-480px */
 
 @media (min-width: 360px) and (max-width: 480px) {

@@ -1183,14 +1183,6 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = { HotelsCounter };
 }
 
-
-
-
-
-
-
-
-
 document.querySelector('.burger').addEventListener('click', function() {
   this.classList.toggle('active');
   document.querySelector('.navigation-list').classList.toggle('open');
